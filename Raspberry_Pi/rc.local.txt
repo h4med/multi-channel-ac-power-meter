@@ -1,0 +1,3 @@
+/usr/bin/influxd -config /etc/influxdb/influxdb.conf
+
+sleep  2

@@ -1,0 +1,21 @@
+sudo systemctl unmask influxdb.service
+sudo systemctl start influxdb
+sudo systemctl enable influxdb.service
+
+
+sudo /usr/bin/influxd -config /etc/influxdb/influxdb.conf
+
+create database emonpi
+use emonpi
+create user emon with password '******'  with all privileges
+grant all privileges on emonpi to emon
+show users
+
+
+cat /etc/influxdb/influxdb.conf | grep -v "#" | grep -v "^$"
+
+use emonpi
+show measurements
+select * from voltage_sensor where "channel" = 'voltage'
+select * from current_sensor where "channel" = '3'
+

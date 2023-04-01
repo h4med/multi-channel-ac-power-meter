@@ -1,0 +1,4 @@
+#!/bin/bash
+
+sleep 30
+/bin/node /home/pi/prj/daily.js
